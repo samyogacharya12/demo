@@ -1,6 +1,4 @@
-package com.example.demo.Exception;
-
-import java.net.URI;
+package com.example.demo.exception;
 
 public final class ErrorConstants {
 

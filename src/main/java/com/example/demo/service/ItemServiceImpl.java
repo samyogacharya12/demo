@@ -1,8 +1,8 @@
 package com.example.demo.service;
 
-import com.example.demo.Entity.Item;
-import com.example.demo.Exception.BadRequestException;
-import com.example.demo.Repository.ItemRepository;
+import com.example.demo.entity.Item;
+import com.example.demo.exception.BadRequestException;
+import com.example.demo.repository.ItemRepository;
 import org.springframework.stereotype.Service;
 import java.util.Objects;
 

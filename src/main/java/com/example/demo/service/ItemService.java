@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-import com.example.demo.Entity.Item;
+import com.example.demo.entity.Item;
 
 public interface ItemService {
 

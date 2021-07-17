@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.Entity.Item;
+import com.example.demo.entity.Item;
 import com.example.demo.service.ItemService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
