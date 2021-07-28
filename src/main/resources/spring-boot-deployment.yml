@@ -1,0 +1,50 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: springboot-demo-mysql
+  labels:
+    name: springboot-demo-mysql
+spec:
+  ports:
+    - nodePort: 30166 
+      port: 8082      
+      targetPort: 8082  
+      protocol: TCP
+  selector:           
+    app: springboot-demo-mysql
+  type: NodePort       
+
+---
+apiVersion: apps/v1 
+kind: Deployment    
+metadata:              
+  name: springboot-demo-mysql
+spec:                
+  selector:         
+    matchLabels:
+      app: springboot-demo-mysql
+  replicas: 3        
+  template:
+    metadata:
+      labels:        
+        app: springboot-demo-mysql
+    spec:
+      containers:
+        - name: springboot-demo-mysql
+          image: 911191919191/springboot:4.0.0
+          ports:
+            - containerPort: 8082                
+          env:   # Setting Enviornmental Variables
+           - name: SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT
+             value: org.hibernate.dialect.MySQL5Dialect
+           - name: SPRING_DATASOURCE_DRIVER-CLASS-NAME
+             value: com.mysql.cj.jdbc.Driver
+           - name: SPRING_DATASOURCE_URL
+             value: jdbc:mysql://mysql/assignment?&createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true
+           - name: SPRING_DATASOURCE_USERNAME
+             value: 'system'
+           - name: MYSQL_ROOT_HOST 
+             value: '%'
+           - name: MYSQL_ROOT_PASSWORD
+             value: 'root'    
+        
