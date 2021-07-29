@@ -16,6 +16,9 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
+
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -37,7 +40,6 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.zalando/problem-violations -->
 		<dependency>
 			<groupId>org.zalando</groupId>
 			<artifactId>problem-violations</artifactId>
@@ -51,6 +53,16 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+
+	<distributionManagement>
+		<repository>
+			<id> GitHub </id>
+			<name>Github Samyog Acharya Apache Maven Package </name>
+			<url> https://github.com/samyogacharya12/demo</url>
+		</repository>
+	</distributionManagement>
+
 
 	<build>
 		<plugins>
