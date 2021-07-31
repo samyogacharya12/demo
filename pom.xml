@@ -6,7 +6,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.2</version>
-		<relativePath/>
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
 	<artifactId>demo</artifactId>
@@ -82,31 +82,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	<profiles>
-		<profile>
-			<id>sonar</id>
-			<properties>
-				<sonar.sources>.</sonar.sources>
-				<sonar.inclusions>src/main/java/**,src/main/resources/**</sonar.inclusions>
-				<!--suppress UnresolvedMavenProperty -->
-				<sonar.exclusions>${code.coverage.exclusions}</sonar.exclusions>
-				<sonar.host.url>https://sonarcloud.io</sonar.host.url>
-			</properties>
-			<activation>
-				<activeByDefault>false</activeByDefault>
-			</activation>
-			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>org.sonarsource.scanner.maven</groupId>
-							<artifactId>sonar-maven-plugin</artifactId>
-							<version>3.7.0.1746</version>
-						</plugin>
-					</plugins>
-				</pluginManagement>
-			</build>
-		</profile>
-	</profiles>
 
 </project>
