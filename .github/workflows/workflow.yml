@@ -45,6 +45,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Building Docker Image
-        run: docker-compose up -d
+        run: docker-compose up
       - name: Publish Docker Image
         run: docker push $REPO
