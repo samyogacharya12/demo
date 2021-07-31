@@ -47,6 +47,8 @@ jobs:
       - name: Building Docker Image
         run:  docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Building Docker Image
-        run: docker build -t $REPO:latest -t $REPO:${GITHUB_RUN_ID} .
-      - name: Publish Docker Image
-        run: docker push $REPO
+        run: docker-compose -f docker-compose.yml -f docker-compose.ci.yml up -d
+      - name: Check running containers
+        run: docker ps -a
+      - name: Check logs
+        run: docker logs 911191919191/spring-boot:1.0.0
