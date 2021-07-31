@@ -45,6 +45,6 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Building Docker Image
-        run: docker build -t $REPO:6.0.0 -t $REPO:${GITHUB_RUN_ID}
+        run: docker build -t $REPO:latest -t $REPO:${GITHUB_RUN_ID} .
       - name: Publish Docker Image
         run: docker push $REPO
