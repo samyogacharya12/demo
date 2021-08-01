@@ -5,7 +5,7 @@ COPY pom.xml /workspace
 COPY src /workspace/src
 RUN mvn -B -f pom.xml clean package -DskipTests
 
-FROM openjdk:11-jdk-slim
+FROM openjdk:11
 MAINTAINER samyog
 COPY --from=build /workspace/target/*.jar demo.jar
 EXPOSE 8082
