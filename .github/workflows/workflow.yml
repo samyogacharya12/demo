@@ -44,11 +44,9 @@ jobs:
       REPO: ${{ secrets.DOCKER_REPO }}
     steps:
       - uses: actions/checkout@v1
-      - name: Building Docker Image
+      - name: Docker Hub Sign-in
         run:  docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Building Docker Image
-        run:  docker-compose -f "docker-compose.yml" up -d --build
-      - name: Check running containers
-        run: docker ps -a
-      - name: Check logs
-        run: docker logs 911191919191/spring-boot:1.0.0
+        run: docker build -t $REPO:latest -t $REPO:${GITHUB_RUN_ID} .
+      - name: Publish Docker Image
+        run: docker push $REPO
