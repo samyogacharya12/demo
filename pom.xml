@@ -55,14 +55,6 @@
 	</dependencies>
 
 
-	<distributionManagement>
-		<repository>
-			<id>github</id>
-			<name>Github Samyog Acharya Apache Maven Package </name>
-			<url> https://maven.pkg.github.com/samyogacharya12/demo</url>
-		</repository>
-	</distributionManagement>
-
 
 	<build>
 		<plugins>
@@ -82,5 +74,24 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>sonar</id>
+			<properties>
+			<sonar.projectKey>samyogacharya12_demo</sonar.projectKey>
+			<sonar.organization>samyogacharya12</sonar.organization>
+			<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+		</properties>
+		</profile>
+	</profiles>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>Github Samyog Acharya Apache Maven Package </name>
+			<url> https://maven.pkg.github.com/samyogacharya12/demo</url>
+		</repository>
+	</distributionManagement>
 
 </project>
