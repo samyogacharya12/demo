@@ -57,9 +57,9 @@
 
 	<distributionManagement>
 		<repository>
-			<id> GitHub </id>
+			<id>github</id>
 			<name>Github Samyog Acharya Apache Maven Package </name>
-			<url> https://github.com/samyogacharya12/demo</url>
+			<url> https://maven.pkg.github.com/samyogacharya12/demo</url>
 		</repository>
 	</distributionManagement>
 
