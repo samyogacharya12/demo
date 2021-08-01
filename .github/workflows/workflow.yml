@@ -6,7 +6,6 @@ on:
       - 'master'
 
 jobs:
-
   test:
     name: Unit-Test
     runs-on: ubuntu-latest
@@ -21,7 +20,6 @@ jobs:
         run: mvn -B clean package
       - name: Maven Verify
         run: mvn -B clean verify -DskipTests
-
   sonar:
     name: Code-Quality Check
     runs-on: ubuntu-latest
@@ -36,7 +34,6 @@ jobs:
         run: mvn -B clean verify -Psonar -Dsonar.projectKey=${{ secrets.SONAR_PROJECTKEY }} -Dsonar.organization=${{ secrets.SONAR_ORGANIZATION }} -Dsonar.login=${{ secrets.SONAR_TOKEN }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       artifact:
         name: Publish Artifact
         runs-on: ubuntu-latest
@@ -51,7 +48,6 @@ jobs:
             run: mvn -B clean deploy -DskipTests
             env:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   docker:
     name: Publish Docker Image
     runs-on: ubuntu-latest
