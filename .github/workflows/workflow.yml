@@ -54,7 +54,7 @@ jobs:
   docker:
     name: Publish Docker Image
     runs-on: ubuntu-latest
-    needs: [test,sonar]
+    needs: [test,sonar,artifact]
     env:
       REPO: ${{ secrets.DOCKER_REPO }}
     steps:
