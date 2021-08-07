@@ -1,8 +1,12 @@
 package com.example.demo.service;
 
-import com.example.demo.entity.Item;
+import com.example.demo.service.dto.ItemDto;
+
+import java.util.List;
 
 public interface ItemService {
 
-    Item save(Item item);
+    ItemDto save(ItemDto item);
+
+    List<ItemDto> findAll();
 }
