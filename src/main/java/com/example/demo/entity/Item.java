@@ -14,8 +14,13 @@ public class Item {
     @Column(name = "name")
     private String name;
 
-
+    @Column(name = "features")
     private String features;
+
+
+    @Column(name = "amount")
+    private Double amount;
+
 
     public Long getId() {
         return id;
@@ -29,6 +34,14 @@ public class Item {
         return features;
     }
 
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
+
     public void setFeatures(String features) {
         this.features = features;
     }
@@ -40,4 +53,7 @@ public class Item {
     public void setName(String name) {
         this.name = name;
     }
+
+
+
 }
