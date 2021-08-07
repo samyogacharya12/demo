@@ -59,7 +59,7 @@ public class ItemServiceImpl implements ItemService {
                 log.info(itemDto.getName() +
                         " is equal  to " + itemDtos.get(index.get()).getName());
             }
-            if (index.get() < itemDtos.size()-1) {
+            if (index.get() < itemDtos.size() - 1) {
                 index.getAndIncrement();
             }
         });
